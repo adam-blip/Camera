@@ -410,6 +410,7 @@ void main () {
   gl_Position = vec4(position, 0, 1.0);
 }
 `
+
 let direction = localStorage.getItem('direction');
 if (direction == null) {
   direction = 'user'
@@ -505,7 +506,7 @@ function loadImage(url) {
   });
 }
 
-function takeScreenshot() {
+async function captureImage() {
   const { canvas } = glea;
   const anchor = document.createElement('a');
   anchor.setAttribute('download', 'selfie.jpg');
@@ -523,6 +524,7 @@ async function changeDirection() {
   localStorage.setItem('direction', direction);
   window.location.href = window.location.href;
 }
+
 async function setup() {
   const { gl } = glea;
   try {
