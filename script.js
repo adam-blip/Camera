@@ -469,11 +469,13 @@ function loop(time) {
 function accessWebcam(video) {
   return new Promise((resolve, reject) => {
     const mediaConstraints = {
-	    audio: false, 
-	    video: { 
-		    brightness: {ideal: 2},
-		    facingMode: { exact: direction }
-	    } 
+      audio: false, 
+      video: { 
+        brightness: { ideal: 2 },
+        facingMode: { exact: direction },
+        width: { ideal: 65536 },
+        height: { ideal: 65536 } 
+      } 
     };
     navigator.mediaDevices.getUserMedia(mediaConstraints).then(mediaStream => {
       video.srcObject = mediaStream;
