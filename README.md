@@ -1,9 +1,7 @@
 # AMD-fidelityFX-SuperResolution-webGL
-webGL implementation of AMDs fidelityFX Super Resolution using webcam feed
+webGL implementation of AMDs fidelityFX Super Resolution using camera feed
 
-online demo: https://htmlpreview.github.io/?https://github.com/BenjaminWegener/AMD-fidelityFX-SuperResolution-webGL/blob/main/index.html
-
-there is also a version to play mp4 files locally: https://github.com/BenjaminWegener/AMD-fidelityFX-SuperResolution-webGL/tree/local-file
+online demo: https://htmlpreview.github.io/?https://github.com/adam-blip/Camera/blob/main/index.html
 
 ```
 // Copyright (c) 2021 Advanced Micro Devices, Inc. All rights reserved.
