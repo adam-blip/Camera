@@ -410,7 +410,11 @@ void main () {
   gl_Position = vec4(position, 0, 1.0);
 }
 `
-
+let direction = localStorage.getItem('direction');
+if (direction == null) {
+  direction = 'user'
+  localStorage.setItem('direction', direction);
+}
 let video = document.querySelector('video');
 let fallbackImage = null;
 
@@ -468,7 +472,7 @@ function accessWebcam(video) {
 	    audio: false, 
 	    video: { 
 		    brightness: {ideal: 2},
-		    facingMode: { exact: 'environment' }
+		    facingMode: { exact: direction }
 	    } 
     };
     navigator.mediaDevices.getUserMedia(mediaConstraints).then(mediaStream => {
@@ -507,6 +511,16 @@ function takeScreenshot() {
   anchor.click();
 }
 
+async function changeDirection() {
+  if (direction == 'user') {
+    direction = 'environment';
+  } else
+  {
+    direction = 'user'
+  }
+  localStorage.setItem('direction', direction);
+  window.location.href = window.location.href;
+}
 async function setup() {
   const { gl } = glea;
   try {
@@ -518,7 +532,7 @@ async function setup() {
   // video = null;
   if (! video) {
     try {
-      fallbackImage = await loadImage('https://placekitten.com/1280/720')
+      fallbackImage = await loadImage('https://')
     } catch (ex) {
       console.error(ex.message);
       return false;

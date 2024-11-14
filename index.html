@@ -29,8 +29,30 @@ video {
   background: rgba(0, 0, 0, 0.5);  /* 50% opaque black */
   color: white;
   padding: .5em;
-  font-family: monospace;
+  font-family: monospace;"
   border-radius: .5em;
+}
+
+.dot {
+  bottom: 5vh;
+  left: 5vh;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.5);  /* 50% opaque black */
+  height: 12vh;
+  width: 12vh;
+  box-shadow: 0px 0.5vh 1vh 0px rgba(0,0,0,0.75);
+  border: none;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.big_text {
+ font-size: 9vh;
+ color: white;
+ margin: auto;
+ padding: auto;
+ font-weight: bold;
+ vertical-align: center;
 }
   </style>
 </head>
@@ -38,6 +60,9 @@ video {
   <div id="container">
     <canvas id="c"></canvas>
     <div id="hud">fps: <span id="fps"></span></div>
+    <button class="dot" onclick="changeDirection();">
+        <p class="big_text">↻</p>
+    </button>
   </div>
   <video></video>
   <script src='./glea.js'></script><script  src="./script.js"></script>
